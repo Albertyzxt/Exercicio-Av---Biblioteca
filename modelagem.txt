@@ -1,0 +1,19 @@
+Exercicio Av - Biblioteca/
+│
+├── controllers/
+│   ├── aluguelController.js
+│   ├── estudanteController.js
+│   └── livroController.js
+│
+├── models/
+│   └── aluguelModel.js
+│   ├── estudanteModel.js
+│   ├── livroModel.js
+│
+├── routes/
+│   └── aluguelRoutes.js
+│   ├── estudanteRoutes.js
+│   ├── livroRoutes.js
+│
+├── index.js
+└── package.json

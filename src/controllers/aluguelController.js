@@ -1,6 +1,6 @@
 const Aluguel = require("../models/aluguelModel.js");
-const livro = require("../models/livroModel.js");
-const estudante = require("../models/estudanteModel.js");
+const Livro = require("../models/livroModel.js");
+const Estudante = require("../models/estudanteModel.js");
 
 const getAllRentals = (req, res) => {
   res.json(Aluguel.getAllRentals());
@@ -17,9 +17,9 @@ const getRentalById = (req, res) => {
 
 const createRental = (req, res) => {
   const { livro_id, estudante_id } = req.body;
-  const book = livro.getBookById(livro_id);
-  const student = estudante.getStudentById(estudante_id);
-  if (book && student) {
+  const livro = Livro.getBookById(livro_id);
+  const estudante = Estudante.getStudentById(estudante_id);
+  if (livro && estudante) {
     const aluguel = Aluguel.createRental(req.body);
     res.status(201).json(aluguel);
   } else {
