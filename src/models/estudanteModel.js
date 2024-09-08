@@ -5,9 +5,15 @@ const getAllStudents = () => estudantes;
 const getStudentById = (id) =>
   estudantes.find((estudante) => estudante.id === id);
 const createStudent = (estudante) => {
-  estudante.id = currentId++;
-  estudantes.push(estudante);
-  return estudante;
+    estudante = {
+     id: currentId++,
+     nome: estudante.nome,
+     matrícula: estudante.matrícula,
+     curso: estudante.curso,
+     ano: estudante.ano
+    };
+    estudantes.push(estudante);
+    return estudante;
 };
 const updateStudent = (id, updatedStudent) => {
   const index = estudantes.findIndex((estudante) => estudante.id === id);

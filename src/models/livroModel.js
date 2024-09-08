@@ -4,7 +4,13 @@ let currentId = 1;
 const getAllBooks = () => livros;
 const getBookById = (id) => livros.find((livro) => livro.id === id);
 const createBook = (livro) => {
-  livro.id = currentId++;
+    livro = {
+     id: currentId++,
+     título: livro.título,
+     autor: livro.autor,
+     ano: livro.ano,
+     gênero: livro.gênero
+    };
   livros.push(livro);
   return livro;
 };
